@@ -27,21 +27,26 @@ public class AddressServiceimpl implements AddressService{
 
     @Override
     public Address update(Address address) {
-        return null;
+        log.debug ("REST program update successfully");
+        return addressRepository.save (address);
     }
 
     @Override
     public List<Address> findAll() {
-        return null;
+        log.debug ("REST program findAll successfully");
+        return addressRepository.findAll ();
     }
 
     @Override
     public Address findByID(Long id) {
-        return null;
+        log.debug ("program get successfully{}:",id);
+        return addressRepository.getById (id);
     }
 
     @Override
     public void delete(Long id) {
+        log.debug ("REST program delete successfully{}:",id);
+        addressRepository.deleteById (id);
 
     }
 }
